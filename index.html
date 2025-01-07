@@ -1,299 +1,82 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>孙佳乐我爱你</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
-            min-height: 100vh;
-            color: #333;
-        }
-        
-        header {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: #e74c3c;
-            margin: 0;
-        }
-        
-        .menu {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .menu-btn {
-            background: white;
-            padding: 1.5rem 2rem;
-            border-radius: 15px;
-            text-decoration: none;
-            color: #333;
-            font-size: 1.2rem;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-        
-        .menu-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 7px 15px rgba(0,0,0,0.2);
-        }
-        
-        .upload-section {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            display: none;
-        }
-        
-        .upload-section.active {
-            display: block;
-        }
-        
-        .upload-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-        
-        .upload-form input,
-        .upload-form textarea {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        
-        .upload-form button {
-            background: #e74c3c;
-            color: white;
-            padding: 1rem;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background 0.3s ease;
-        }
-        
-        .upload-form button:hover {
-            background: #c0392b;
-        }
-        
-        .content-display {
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-        }
-        
-        .content-item {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .content-item img,
-        .content-item video {
-            max-width: 100%;
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-        
-        @media (max-width: 600px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            .menu {
-                flex-direction: column;
-                align-items: center;
-            }
-            
-            .menu-btn {
-                width: 80%;
-                text-align: center;
-            }
-        }
-    </style>
+    <title>孙佳乐的小窝</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <h1>孙佳乐我爱你</h1>
-    </header>
-    
-    <div class="menu">
-        <button class="menu-btn" data-section="memories">珍贵回忆</button>
-        <button class="menu-btn" data-section="moments">精彩瞬间</button>
-        <button class="menu-btn" data-section="future">未来可期</button>
-    </div>
-    
-    <div class="upload-section" id="memories-section">
-        <form class="upload-form" id="memories-form">
-            <textarea placeholder="写下你的珍贵回忆..." rows="4"></textarea>
-            <input type="file" accept="image/*,video/*">
-            <button type="submit">上传回忆</button>
-        </form>
-    </div>
-    
-    <div class="upload-section" id="moments-section">
-        <form class="upload-form" id="moments-form">
-            <textarea placeholder="描述你的精彩瞬间..." rows="4"></textarea>
-            <input type="file" accept="image/*,video/*">
-            <button type="submit">上传瞬间</button>
-        </form>
-    </div>
-    
-    <div class="upload-section" id="future-section">
-        <form class="upload-form" id="future-form">
-            <textarea placeholder="分享你对未来的期待..." rows="4"></textarea>
-            <input type="file" accept="image/*,video/*">
-            <button type="submit">上传期待</button>
-        </form>
+    <div class="container">
+        <header class="page-header">
+            <div class="title-wrapper">
+                <h1 class="main-title">✨ 孙佳乐的小窝 🏡</h1>
+                <p class="subtitle">🌟 记录生活中的每一个瞬间 💫</p>
+            </div>
+        </header>
+
+        <div class="post-form-card">
+            <form id="post-form" class="post-form">
+                <div class="form-group">
+                    <label for="content">
+                        <i class="fas fa-pen"></i>
+                        写下此刻的心情 ✍️
+                    </label>
+                    <textarea id="content" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="user">
+                        <i class="fas fa-user"></i>
+                        选择用户 👤
+                    </label>
+                    <select id="user" required>
+                        <option value="晁森豪">晁森豪 🤴</option>
+                        <option value="孙佳乐">孙佳乐 👸</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="image">
+                        <i class="fas fa-image"></i>
+                        添加图片 📸
+                    </label>
+                    <input type="file" id="image" accept="image/*" multiple>
+                </div>
+
+                <div id="preview-container" class="preview-container"></div>
+
+                <button type="submit" class="submit-btn">
+                    <i class="fas fa-paper-plane"></i>
+                    发布 🚀
+                </button>
+            </form>
+            <div id="loading" class="loading">发布中...</div>
+        </div>
+
+        <div class="timeline-wrapper">
+            <div class="timeline"></div>
+        </div>
     </div>
 
-    <!-- Add Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js"></script>
-    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage-compat.js"></script>
     <script>
-        // Initialize Firebase
         const firebaseConfig = {
             apiKey: "AIzaSyDlP83YdTLp5szvUlElWeG_6tNWNx00_YU",
             authDomain: "sjl-and-csh.firebaseapp.com",
             projectId: "sjl-and-csh",
-            storageBucket: "sjl-and-csh.firebasestorage.app",
+            storageBucket: "sjl-and-csh.appspot.com",
             messagingSenderId: "623953756480",
             appId: "1:623953756480:web:70da1d43bd540347d67aa5",
-            measurementId: "G-EW0NKQJGRZ"
+            measurementId: "G-EW0NKQJGRZ",
+            databaseURL: "https://sjl-and-csh-default-rtdb.asia-southeast1.firebasedatabase.app"
         };
-        
-        const app = firebase.initializeApp(firebaseConfig);
-        const db = firebase.firestore();
-        const auth = firebase.auth();
-        
-        const menuButtons = document.querySelectorAll('.menu-btn');
-        const sections = document.querySelectorAll('.upload-section');
-        
-        menuButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                // Hide all sections
-                sections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                // Show selected section
-                const target = button.getAttribute('data-section');
-                document.getElementById(`${target}-section`).classList.add('active');
-            });
-        });
-        
-        // Handle form submissions and display content
-        const forms = document.querySelectorAll('.upload-form');
-        // Load saved content from Firestore
-        document.addEventListener('DOMContentLoaded', async () => {
-            // Check authentication
-            auth.onAuthStateChanged(async (user) => {
-                if (!user) {
-                    // Sign in anonymously
-                    await auth.signInAnonymously();
-                }
-                
-                // Load content
-                const snapshot = await db.collection('content').get();
-                snapshot.forEach(doc => {
-                    const section = doc.id;
-                    const displayArea = document.getElementById(`${section}-display`);
-                    if (displayArea) {
-                        displayArea.innerHTML = doc.data().html;
-                    }
-                });
-            });
-        });
-
-        forms.forEach(form => {
-            // Create display area for each section
-            const section = form.id.replace('-form', '');
-            const displayDiv = document.createElement('div');
-            displayDiv.className = 'content-display';
-            displayDiv.id = `${section}-display`;
-            form.parentNode.insertBefore(displayDiv, form.nextSibling);
-
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                
-                // Get form data
-                const text = form.querySelector('textarea').value;
-                const fileInput = form.querySelector('input[type="file"]');
-                const file = fileInput.files[0];
-                
-                // Create content item
-                const contentItem = document.createElement('div');
-                contentItem.className = 'content-item';
-                
-                // Add text content
-                if (text) {
-                    const textDiv = document.createElement('div');
-                    textDiv.textContent = text;
-                    contentItem.appendChild(textDiv);
-                }
-                
-                // Add media content
-                if (file) {
-                    const reader = new FileReader();
-                    reader.onload = function(e) {
-                        const media = file.type.startsWith('image') ? 
-                            document.createElement('img') :
-                            document.createElement('video');
-                        media.src = e.target.result;
-                        media.controls = true;
-                        contentItem.appendChild(media);
-                        
-                        // Save to localStorage
-                        const displayArea = document.getElementById(`${section}-display`);
-                        displayArea.prepend(contentItem);
-                        saveContent(section);
-                    };
-                    reader.readAsDataURL(file);
-                } else if (text) {
-                    const displayArea = document.getElementById(`${section}-display`);
-                    displayArea.prepend(contentItem);
-                    saveContent(section);
-                }
-                
-                form.reset();
-                alert('上传成功！这份爱意已妥善保存 ❤️');
-            });
-        });
-
-        async function saveContent(section) {
-            const displayArea = document.getElementById(`${section}-display`);
-            const content = displayArea.innerHTML;
-            
-            await db.collection('content').doc(section).set({
-                html: content,
-                timestamp: firebase.firestore.FieldValue.serverTimestamp()
-            });
-        }
+        firebase.initializeApp(firebaseConfig);
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
